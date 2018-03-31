@@ -1,47 +1,59 @@
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw
- * Date：2018/3/26
+ * Date：2018/3/27
  * Time：22:51
  */
+/*给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 长度最长为1000。
+
+        示例:
+
+        输入: "babad"
+
+        输出: "bab"
+
+        注意: "aba"也是有效答案
+
+
+        示例:
+
+        输入: "cbbd"
+
+        输出: "bb"*/
 public class Solution_5 {
     public static void main(String[] args) {
-        Solution_5 so =new Solution_5();
-
-        System.out.println(so.romanToInt("DCXXI"));
+        Solution_5 solution_7 = new Solution_5();
+        String s = solution_7.longestPalindrome("babad");
+        System.out.println(s);
     }
-    // I           1
-    // V           5
-    // X           10
-    // L           50
-    // C           100
-    // D           500
-    // M           1000
-    public int romanToInt(String s) {
-        Map<Character, Integer> m = new HashMap<Character, Integer>();
-        m.put('I', 1);
-        m.put('V', 5);
-        m.put('X', 10);
-        m.put('L', 50);
-        m.put('C', 100);
-        m.put('D', 500);
-        m.put('M', 1000);
-        if (s.length()==1&&s.equals("I")){
-            return 1;
+    public String longestPalindrome(String s) {
+        String res = "";
+        if(s.length()==1){
+            return s;
         }
-        int n=m.get(s.charAt(s.length()-1));
-
-        for (int i = s.length()-1; i >= 1 ; i--) {
-
-            if(m.get(s.charAt(i))>m.get(s.charAt(i-1))){
-                n=n-m.get(s.charAt(i-1));
-            }else {
-                n+=m.get(s.charAt(i-1));
+        int k=0;
+        int j=0;
+        int max=0;      //时间复杂度有点高，思路是若回文串为奇数i为回文字符串中最中间的数kj分别向左向右找最长的回文串
+        for (int i=0;i<s.length();++i){                 //若为偶数则假设i为最中间的左边数字，然后再向左向右找最长字符串
+            for ( j=i,k=i;k>=0&&j<s.length();++j,--k){
+                if (s.charAt(j)==s.charAt(k)&&(j-k+1)>max){
+                    max=j-k+1;
+                    res=s.substring(k,j+1);
+                }else if (s.charAt(j)!=s.charAt(k)){
+                    break;
+                }
             }
+            for (j=i,k=i-1;k>=0&&j<s.length();j++,k--){
+                if (s.charAt(j)==s.charAt(k)&&(j-k+1)>max){
+                    max=j-k+1;
+                    res=s.substring(k,j+1);
+                }else if (s.charAt(j)!=s.charAt(k)){
+                    break;
+                }
+            }
+
         }
-        return n;
+
+        return res;
     }
 }

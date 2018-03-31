@@ -5,40 +5,39 @@
  * Time：22:51
  */
 public class Solution_10 {
+/*    '.' 匹配任意单个字符。
+            '*' 匹配零个或多个前面的元素。*/
+/*    isMatch("aa","a") → false
+    isMatch("aa","aa") → true
+    isMatch("aaa","aa") → false
+    isMatch("aa", "a*") → true
+    isMatch("aa", ".*") → true
+    isMatch("ab", ".*") → true
+    isMatch("aab", "c*a*b") → true*/
     public static void main(String[] args) {
-        System.out.println(myAtoi("+-2"));
+        System.out.println(isMatch("ab",".*"));
     }
-    public static int myAtoi(String str) {
-        if(str==null||str.length()==0)
-            return 0;
-        char[] array = str.toCharArray();
-        long result = 0; // 要返回的结果result
-        int count = 0; // 记录‘+'或者‘-'出现的次数
-        int num = 0;  // 判断空格出现的位置
-        int flag = 1; // 正数还是负数
-        for (int i = 0; i < array.length; i++) {
-            Character c = array[i];
-            if(Character.isDigit(c)){
-                result = result*10+Character.getNumericValue(c);
-                if(flag==1&&result>Integer.MAX_VALUE){
-                    return Integer.MAX_VALUE;
-                }else if(flag==-1&&-result<Integer.MIN_VALUE)
-                    return Integer.MIN_VALUE;
-                num++;
-            }else if(Character.isSpaceChar(c)&&num==0&&count==0)
-                continue;
-            else if(c=='+'&&count==0){
-                count = 1;
-            }
-            else if(c=='-'&&count==0){
-                flag = -1;
-                count = 1;
-            }
-            else{
-                return (int) (flag*result);
+    public static boolean isMatch(String s, String p) {
+        //p匹配结束，观察s是否也结束
+        if(p.length() == 0)
+            return s.length() == 0;
 
-            }
+        //p下一个字符不存在连续匹配情况*，直接进行比较，并递归到第二项之后的子串
+        if(p.length() == 1 || p.charAt(1) != '*')
+        {
+            if(s.length() != 0 && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.'))
+                return isMatch(s.substring(1), p.substring(1));
+            else
+                return false;
         }
-        return (int) (flag*result);
+
+        //p下一个字符存在连续匹配情况*，比较首项，并且递归进行比较
+        while(s.length() != 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.'))
+        {
+            if(isMatch(s, p.substring(2)))
+                return true;
+            s = s.substring(1);
+        }
+        return isMatch(s, p.substring(2));
     }
 }
