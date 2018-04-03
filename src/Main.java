@@ -8,9 +8,15 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-
+        int foo = foo(17, 8);
+        System.out.println(foo);
+    }
+    static int foo(int a,int b){
+        if(a<=0||b<=0)
+            return 1;
+        else
+            return 3*foo(a-6,b/2);
     }
 
 }
