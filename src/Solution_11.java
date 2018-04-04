@@ -2,6 +2,7 @@
  * Created with IntelliJ IDEA.
  * User：by gyw
  * Date：2018-04-01 17:08
+ * 欢迎关注github https://github.com/Faded1234/Leetcode
  */
 /*给定 n 个正整数 a1，a2，...，an，其中每个点的坐标用（i, ai）表示。
         画 n 条直线，使得线 i 的两个端点处于（i，ai）和（i，0）处。
