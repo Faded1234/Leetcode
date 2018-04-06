@@ -9,14 +9,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int foo = foo(17, 8);
-        System.out.println(foo);
-    }
-    static int foo(int a,int b){
-        if(a<=0||b<=0)
-            return 1;
-        else
-            return 3*foo(a-6,b/2);
+        int a=-1;
+        Math.abs(a);
+        System.out.println(a);
+
+
     }
 
 }

@@ -26,7 +26,7 @@ public class Solution_8 {
         System.out.println(myAtoi("-+-2"));
     }
     public static int myAtoi(String str) {  //此题主要是对题意的理解，要求是找整数
-        if(str==null||str.length()==0)      //即去除空格后第一个字符应该是'+'或者'-'然后后面跟着一个数字所以如果不是就可以直接终止循环
+        if(str==null||str.length()==0)      //即去除空格后第一个字符应该是'+'或者'-'然后后面跟着一个数所以如果不是就可以直接终止循环
             return 0;                                       //
         char[] array = str.toCharArray();
         long result = 0; // 要返回的结果result此处为long防止越界

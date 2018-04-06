@@ -5,7 +5,6 @@ import java.util.Map;
  * Created with IntelliJ IDEA.
  * User：by gyw
  * Date：2018-04-01 18:16
-  * 欢迎关注github https://github.com/Faded1234/Leetcode
  */
 /*给定一个整数，将其转为罗马数字。
         输入保证在 1 到 3999 之间。*/
