@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +18,7 @@ public class Solution_17 {
         if(digits.length()<1||digits==null){
             return  list;
         }
-        if (isInt(digits)==false){
+        if (isInt(digits)==false){  //判断是否包含非法字符
             return list;
         }
 
@@ -38,9 +37,7 @@ public class Solution_17 {
         work(digits,0,ch,list,map);
         return list;
     }
-
-
-
+    //递归实现 递归的关键是终止条件，分析当digits为个位数时可知当指针index=digits.length()时递归终止
     public static void work(String digits, int index, char[] ch,  List<String> res, HashMap<Character, String> hm){
         if(index == digits.length()){  // 如果成立，表明已经连接到最后一个数字了，因此要将结果加入res
             res.add(new String(ch));
