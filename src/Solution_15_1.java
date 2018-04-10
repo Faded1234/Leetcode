@@ -31,7 +31,6 @@ public class Solution_15_1 {
         System.out.println(a.length);
     }
     public static List<List<Integer>> threeSum(int[] nums) {
-//这种写法是不可取的，因为是三层循环所以时间复杂度是非常高的。
         if (nums.length<=2)  //如果集合的长度小于3直接返回空
         {
             List li = new ArrayList();
