@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw
@@ -23,8 +28,47 @@
         words = ["word","student"]
         输出: []*/
 public class Solution_30 {
-    public static void main(String[] args) {
-        //欢迎关注github https://github.com/Faded1234/Leetcode
 
+    public static void main(String[] args) {
+
+        String[] words = {};
+        List<Integer> barfoothefoobarman = findSubstring("barfoothefoobarman", words);
+        System.out.println();
     }
+    public static List<Integer> findSubstring(String s, String[] words) {
+        //欢迎关注github https://github.com/Faded1234/Leetcode
+        List<Integer> list = new ArrayList<>();
+        if (words.length==0){
+            return list;
+        }
+        int L = s.length(), N = words[0].length();  //L为s的长度，N为一个单词的长度
+        int M = N * words.length;   //M是words所有单词的总长度
+        if(L == 0 || N == 0 || M > L) return list;
+        Map<String, Integer> dict = new HashMap<>();
+        for(String word:words) {
+            Integer cnt = dict.get(word);
+            dict.put(word, cnt == null ? 1 : cnt+1);
+        }
+        for(int i=0; i<=L-M; i++) {
+            String str = s.substring(i, i+M);
+            if(containWords(str, words, dict)) {
+                list.add(i);
+            }
+        }
+        return list;
+    }
+
+    private static boolean containWords(String str, String[] words, Map<String, Integer> dict) {
+        int N = words[0].length();
+        Map<String, Integer> map = new HashMap<>();
+        for(int i=0; i<str.length(); i+=N) {
+            String word = str.substring(i, i+N);
+            Integer cnt = map.get(word);
+            cnt = cnt == null ? 1 : cnt+1;
+            map.put(word, cnt);
+            if(!dict.containsKey(word) || cnt > dict.get(word)) return false;   //判断map和dict是否是完全一样
+        }
+        return true;
+    }
+
 }
