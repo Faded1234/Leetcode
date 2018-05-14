@@ -61,7 +61,7 @@ public class Solution_37 {
         int beginCol = 3*(col/3);
         for(int i = beginRow;i<beginRow+3;i++){
             for(int j = beginCol;j<beginCol+3;j++){
-                if(i!=row&&j!=col&&board[i][j] == board[row][col]){
+                if(i!=row&&j!=col&&board[i][j] == board[row][col]){ //只需要保证新插入的和之前的九宫格没有冲突就能保证
                     return false;
                 }
             }
