@@ -1,3 +1,5 @@
+package suanfa.HashTable;
+
 import java.util.*;
 
 /**

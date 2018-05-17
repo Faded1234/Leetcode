@@ -1,3 +1,7 @@
+package suanfa.LinkedList;
+
+import suanfa.LinkedList.ListNode;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw
@@ -54,15 +58,15 @@ public class Solution_25 {
         }
         return reshead.next;
     }
-/*    public ListNode reverseKGroup(ListNode head, int k) {
+/*    public suanfa.LinkedList.ListNode reverseKGroup(suanfa.LinkedList.ListNode head, int k) {
         int n = 0;
-        for (ListNode i = head; i != null; n++, i = i.next);
+        for (suanfa.LinkedList.ListNode i = head; i != null; n++, i = i.next);
 
-        ListNode dmy = new ListNode(0);
+        suanfa.LinkedList.ListNode dmy = new suanfa.LinkedList.ListNode(0);
         dmy.next = head;
-        for(ListNode prev = dmy, tail = head; n >= k; n -= k) {
+        for(suanfa.LinkedList.ListNode prev = dmy, tail = head; n >= k; n -= k) {
             for (int i = 1; i < k; i++) {
-                ListNode next = tail.next.next;
+                suanfa.LinkedList.ListNode next = tail.next.next;
                 tail.next.next = prev.next;
                 prev.next = tail.next;
                 tail.next = next;

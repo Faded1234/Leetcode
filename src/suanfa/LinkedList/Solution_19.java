@@ -1,3 +1,7 @@
+package suanfa.LinkedList;
+
+import suanfa.LinkedList.ListNode;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw

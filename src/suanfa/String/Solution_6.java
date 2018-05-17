@@ -1,4 +1,4 @@
-/**
+package suanfa.String; /**
  * Created with IntelliJ IDEA.
  * User：by gyw
  * Date：2018/3/29

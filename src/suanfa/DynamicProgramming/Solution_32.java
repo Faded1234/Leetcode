@@ -1,6 +1,11 @@
+package suanfa.DynamicProgramming;
+
 import java.util.Stack;
 
 /**
+ * 动态编程
+ *也属于String包下分类
+ *
  * Created with IntelliJ IDEA.
  * User：by gyw
  * Date：2018-05-11 21:54

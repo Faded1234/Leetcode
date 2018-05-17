@@ -1,4 +1,7 @@
+package suanfa.String;
+
 /**
+ * 也属于Math包下
  * Created with IntelliJ IDEA.
  * User：by gyw
  * Date：2018/3/29

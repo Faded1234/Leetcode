@@ -1,3 +1,5 @@
+package suanfa.LinkedList;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw
@@ -14,7 +16,7 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
+        return "suanfa.LinkedList.ListNode{" +
                 "val=" + val +
                 ", next=" + next +
                 '}';

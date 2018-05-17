@@ -1,3 +1,5 @@
+package suanfa.Math;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw

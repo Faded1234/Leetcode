@@ -1,3 +1,5 @@
+package suanfa.TwoPointers;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw

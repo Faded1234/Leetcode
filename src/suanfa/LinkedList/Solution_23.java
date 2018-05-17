@@ -1,4 +1,6 @@
-import java.util.Arrays;
+package suanfa.LinkedList;
+
+import suanfa.LinkedList.ListNode;
 
 /**
  * Created with IntelliJ IDEA.

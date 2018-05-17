@@ -1,3 +1,5 @@
+package suanfa.DynamicProgramming;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw

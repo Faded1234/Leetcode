@@ -1,3 +1,5 @@
+package suanfa.BinarySearch;
+
 /**
  * Created with IntelliJ IDEA.
  * User：by gyw
