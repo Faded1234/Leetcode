@@ -1,4 +1,4 @@
-import suanfa.LinkedList.ListNode;
+package suanfa.LinkedList;
 
 import java.math.BigInteger;
 

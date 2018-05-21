@@ -14,7 +14,7 @@ public class Solution_39_1 {
     List<List<Integer>> ans = new ArrayList<List<Integer>>();
     int path[] = new int[1000];
     int len = 0;
-
+    //回溯算法
     public void DFS(int index, int[] c, int target){
         if(target == 0){
             //ans记录

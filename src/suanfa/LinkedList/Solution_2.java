@@ -1,4 +1,5 @@
-import suanfa.LinkedList.ListNode;
+package suanfa.LinkedList;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,7 +8,7 @@ import suanfa.LinkedList.ListNode;
  */
 public class Solution_2 {
     public static void main(String[] args) {
-        Solution_2_1 main = new Solution_2_1();     //测试数据
+        Solution_2 main = new Solution_2();     //测试数据
         ListNode listNode1 = new ListNode(2);
         ListNode listNode2 = new ListNode(4);
         ListNode listNode3 = new ListNode(3);
