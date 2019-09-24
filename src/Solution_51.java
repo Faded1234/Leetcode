@@ -14,7 +14,7 @@ public class Solution_51 {
      */
     public static void main(String[] args) {
         List<List<String>> lists = solveNQueens(4);
-        System.out.println();
+        System.out.println(lists.size());
     }
     public static List<List<String>> solveNQueens(int n) {
         list = new ArrayList<List<String>>();
