@@ -34,8 +34,7 @@ public class Solution_63 {
                 }
             }
         }
-        System.out.println();
-        System.out.println();
+        System.out.println("");
         // Return value stored in rightmost bottommost cell. That is the destination.
         return obstacleGrid[R - 1][C - 1];
 
